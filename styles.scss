@@ -85,17 +85,25 @@ header {
 				height: 80%;
 				margin-right: 20px;
 				font-size: 12px;
+				position: relative;
+				text-decoration: none;
+				color: $text;
 				.icon {
 					width: 15px;
 					height: 15px;
-					// background-color: green;
 				}
 				p {
 					margin-top: -3px;
 				}
-				text-decoration: none;
-				color: $text;
+
+				&:hover {
+					color: $textHover;
+					.dropdown {
+						display: block;
+					}
+				}
 			}
+
 			.header__left__elements:nth-child(2) {
 				width: 32%;
 				margin-left: 20px;
@@ -126,9 +134,13 @@ header {
 			div.about {
 				@include flex(space-between, center);
 				background: transaprent;
+				position: relative;
 				&:hover {
 					text-decoration: underline;
 					color: $textHover;
+					.dropdown {
+						display: block;
+					}
 				}
 				.icon {
 					width: 15px;
@@ -138,6 +150,53 @@ header {
 						font-size: 12px;
 					}
 				}
+				.dropdown {
+					width: 180px;
+					right: -20px;
+					top: 25px;
+					height: 180px;
+					li {
+						font-size: 13px;
+					}
+				}
+			}
+		}
+		.dropdown {
+			width: 100px;
+			background-color: $white;
+			height: 200px;
+			position: absolute;
+			top: 40px;
+			z-index: 4;
+			display: none;
+			border: 1px solid grey;
+			border-radius: 3px;
+			padding: 20px;
+			ul {
+				list-style-type: none;
+				li {
+					margin-bottom: 13px;
+					cursor: pointer;
+					&:hover {
+						text-decoration: underline;
+						color: $textHover;
+					}
+				}
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: -9px;
+				right: 15px;
+				width: 15px;
+				height: 15px;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background-color: $white;
+				border-left: 1px solid grey;
+				border-top: 1px solid grey;
+				z-index: -1;
 			}
 		}
 	}
@@ -158,6 +217,7 @@ header {
 		max-width: 1124px;
 		margin: 0 auto;
 		@include flex(flex-start, center);
+		position: relative;
 		.site__logo {
 			width: 12%;
 			height: 50%;
@@ -179,8 +239,17 @@ header {
 				li {
 					font-size: 18px;
 					@include flex(space-between, center);
+
 					&:hover {
 						color: $textHover;
+						.softwareDropdown {
+							display: block;
+						}
+						.resourcesDropdown {
+							display: -webkit-box;
+							display: -ms-flexbox;
+							display: flex;
+						}
 					}
 					.icon {
 						width: 12px;
@@ -196,9 +265,180 @@ header {
 							display: block;
 						}
 					}
+					.softwareDropdown {
+						width: 100%;
+						height: 80vh;
+						display: none;
+						position: absolute;
+						overflow-y: scroll;
+						top: 90px;
+						left: 0;
+						padding: 30px;
+						background-color: $crmBg;
+						border-top: 1px solid $text;
+						color: $text;
+						h3,
+						p {
+							text-align: center;
+						}
+						p {
+							font-size: 12px;
+							margin-bottom: 20px;
+							padding: 0;
+						}
+						h3 {
+							font-size: 18px;
+							margin-bottom: 20px;
+							font-weight: bold;
+						}
+						.links {
+							width: 100%;
+							height: 50px;
+							@include flex(center, center);
+							.link {
+								width: 20%;
+								height: 100%;
+								margin-right: 20px;
+								background-color: $white;
+								@include flex(center, center);
+								p {
+									margin: 0;
+									color: $textHover;
+									&:hover {
+										cursor: pointer;
+										text-decoration: underline;
+									}
+									.icon {
+										width: 20px;
+										height: 20px;
+										margin-left: 10px;
+										background-color: green;
+									}
+								}
+							}
+						}
+						.cards {
+							width: 80%;
+							margin: 0 auto;
+							height: 300px;
+							display: grid;
+							margin-top: 20px;
+							grid-template-columns: repeat(3, 1fr);
+							gap: 20px;
+							.card {
+								width: 100%;
+								height: 130px;
+								background-color: $white;
+								padding: 20px;
+								.top {
+									width: 100%;
+									height: 20px;
+									@include flex(flex-start, center);
+									.icon {
+										height: 100%;
+										width: 20px;
+										margin: 0;
+										img {
+											width: 100%;
+											height: 100%;
+										}
+									}
+									h3 {
+										font-size: 14px;
+										margin: 0;
+										margin-left: 10px;
+									}
+								}
+								.desc {
+									width: 100%;
+									margin-top: 15px;
+									font-weight: bold;
+									p {
+										text-align: left;
+										width: 76%;
+										margin-left: 14%;
+										a {
+											color: $textHover;
+											&:hover {
+												cursor: pointer;
+												text-decoration: underline;
+											}
+											.icon {
+												width: 20px;
+												height: 20px;
+												background-color: green;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					.resourcesDropdown {
+						width: 55%;
+						height: 50vh;
+						background-color: $white;
+						position: absolute;
+						top: 90px;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						border-top: 1px solid $text;
+						border-radius: 2px;
+						@include flex(space-between, flex-start);
+						gap: 20px;
+						display: none;
+						.dropdown__section {
+							width: 50%;
+							height: 100%;
+							padding: 20px;
+							.section__item {
+								width: 100%;
+								height: auto;
+								margin-bottom: 10px;
+								.heading {
+									width: 100%;
+									height: 20px;
+									margin-bottom: 10px;
+									@include flex(flex-start, center);
+									.icon {
+										width: 20px;
+										height: 20px;
+										margin: 0;
+										margin-right: 10px;
+										background-color: pink;
+										img {
+											width: 100%;
+											height: 100%;
+										}
+									}
+									h3 {
+										font-size: 14px;
+									}
+								}
+								ul {
+									list-style-type: none;
+									width: 100%;
+									height: 100%;
+									display: block;
+									li {
+										width: 100%;
+										height: 20px;
+										display: block;
+										margin-bottom: 15px;
+										font-weight: bold;
+										margin-left: 30px;
+										// background-color: white;
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
+
 		.ctas {
 			width: 25%;
 			height: 60%;

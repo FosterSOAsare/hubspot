@@ -94,6 +94,7 @@ header .header__items .header__left .header__left__elements {
   height: 80%;
   margin-right: 20px;
   font-size: 12px;
+  position: relative;
   text-decoration: none;
   color: #2d3e50;
 }
@@ -105,6 +106,14 @@ header .header__items .header__left .header__left__elements .icon {
 
 header .header__items .header__left .header__left__elements p {
   margin-top: -3px;
+}
+
+header .header__items .header__left .header__left__elements:hover {
+  color: #0b8484;
+}
+
+header .header__items .header__left .header__left__elements:hover .dropdown {
+  display: block;
 }
 
 header .header__items .header__left .header__left__elements:nth-child(2) {
@@ -158,11 +167,16 @@ header .header__items .header__right div.about {
   -ms-flex-align: center;
   align-items: center;
   background: transaprent;
+  position: relative;
 }
 
 header .header__items .header__right div.about:hover {
   text-decoration: underline;
   color: #0b8484;
+}
+
+header .header__items .header__right div.about:hover .dropdown {
+  display: block;
 }
 
 header .header__items .header__right div.about .icon {
@@ -173,6 +187,60 @@ header .header__items .header__right div.about .icon {
 
 header .header__items .header__right div.about .icon i {
   font-size: 12px;
+}
+
+header .header__items .header__right div.about .dropdown {
+  width: 180px;
+  right: -20px;
+  top: 25px;
+  height: 180px;
+}
+
+header .header__items .header__right div.about .dropdown li {
+  font-size: 13px;
+}
+
+header .header__items .dropdown {
+  width: 100px;
+  background-color: white;
+  height: 200px;
+  position: absolute;
+  top: 40px;
+  z-index: 4;
+  display: none;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+header .header__items .dropdown ul {
+  list-style-type: none;
+}
+
+header .header__items .dropdown ul li {
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+
+header .header__items .dropdown ul li:hover {
+  text-decoration: underline;
+  color: #0b8484;
+}
+
+header .header__items .dropdown::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: white;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  z-index: -1;
 }
 
 .desktop__menu {
@@ -200,6 +268,7 @@ header .header__items .header__right div.about .icon i {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 
 .desktop__menu .menu__container .site__logo {
@@ -259,6 +328,16 @@ header .header__items .header__right div.about .icon i {
   color: #0b8484;
 }
 
+.desktop__menu .menu__container nav ul li:hover .softwareDropdown {
+  display: block;
+}
+
+.desktop__menu .menu__container nav ul li:hover .resourcesDropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .desktop__menu .menu__container nav ul li .icon {
   width: 12px;
   height: 12px;
@@ -273,6 +352,244 @@ header .header__items .header__right div.about .icon i {
   padding: 0;
   margin-top: 0px;
   display: block;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown {
+  width: 100%;
+  height: 80vh;
+  display: none;
+  position: absolute;
+  overflow-y: scroll;
+  top: 90px;
+  left: 0;
+  padding: 30px;
+  background-color: #f6f9fc;
+  border-top: 1px solid #2d3e50;
+  color: #2d3e50;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown h3,
+.desktop__menu .menu__container nav ul li .softwareDropdown p {
+  text-align: center;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown p {
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .links {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .links .link {
+  width: 20%;
+  height: 100%;
+  margin-right: 20px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .links .link p {
+  margin: 0;
+  color: #0b8484;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .links .link p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .links .link p .icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  background-color: green;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards {
+  width: 80%;
+  margin: 0 auto;
+  height: 300px;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card {
+  width: 100%;
+  height: 130px;
+  background-color: white;
+  padding: 20px;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .top {
+  width: 100%;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .top .icon {
+  height: 100%;
+  width: 20px;
+  margin: 0;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .top .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .top h3 {
+  font-size: 14px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc {
+  width: 100%;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc p {
+  text-align: left;
+  width: 76%;
+  margin-left: 14%;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc p a {
+  color: #0b8484;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc p a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc p a .icon {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown {
+  width: 55%;
+  height: 50vh;
+  background-color: white;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-top: 1px solid #2d3e50;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: none;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item .heading {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item .heading .icon {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-right: 10px;
+  background-color: pink;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item .heading .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item .heading h3 {
+  font-size: 14px;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item ul {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item ul li {
+  width: 100%;
+  height: 20px;
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  margin-left: 30px;
+  font-size: 14px;
 }
 
 .desktop__menu .menu__container .ctas {
