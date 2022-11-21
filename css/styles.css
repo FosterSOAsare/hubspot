@@ -112,10 +112,6 @@ header .header__items .header__left .header__left__elements:hover {
   color: #0b8484;
 }
 
-header .header__items .header__left .header__left__elements:hover .dropdown {
-  display: block;
-}
-
 header .header__items .header__left .header__left__elements:nth-child(2) {
   width: 32%;
   margin-left: 20px;
@@ -173,10 +169,6 @@ header .header__items .header__right div.about {
 header .header__items .header__right div.about:hover {
   text-decoration: underline;
   color: #0b8484;
-}
-
-header .header__items .header__right div.about:hover .dropdown {
-  display: block;
 }
 
 header .header__items .header__right div.about .icon {
@@ -272,7 +264,7 @@ header .header__items .dropdown::after {
 }
 
 .desktop__menu .menu__container .site__logo {
-  width: 12%;
+  width: auto;
   height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,6 +286,9 @@ header .header__items .dropdown::after {
   width: 30%;
   height: 80%;
   margin-left: 7%;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .desktop__menu .menu__container nav ul {
@@ -328,16 +323,6 @@ header .header__items .dropdown::after {
   color: #0b8484;
 }
 
-.desktop__menu .menu__container nav ul li:hover .softwareDropdown {
-  display: block;
-}
-
-.desktop__menu .menu__container nav ul li:hover .resourcesDropdown {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .desktop__menu .menu__container nav ul li .icon {
   width: 12px;
   height: 12px;
@@ -356,7 +341,7 @@ header .header__items .dropdown::after {
 
 .desktop__menu .menu__container nav ul li .softwareDropdown {
   width: 100%;
-  height: 80vh;
+  height: 87vh;
   display: none;
   position: absolute;
   overflow-y: scroll;
@@ -364,8 +349,9 @@ header .header__items .dropdown::after {
   left: 0;
   padding: 30px;
   background-color: #f6f9fc;
-  border-top: 1px solid #2d3e50;
+  border: 1px solid #bbcbd9;
   color: #2d3e50;
+  border-radius: 2px;
 }
 
 .desktop__menu .menu__container nav ul li .softwareDropdown h3,
@@ -428,8 +414,11 @@ header .header__items .dropdown::after {
 .desktop__menu .menu__container nav ul li .softwareDropdown .links .link p .icon {
   width: 20px;
   height: 20px;
-  margin-left: 10px;
-  background-color: green;
+  margin-left: 0px;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .links .link p .icon i {
+  display: inline;
 }
 
 .desktop__menu .menu__container nav ul li .softwareDropdown .cards {
@@ -504,7 +493,28 @@ header .header__items .dropdown::after {
 .desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc p a .icon {
   width: 20px;
   height: 20px;
-  background-color: green;
+  margin-left: 0px;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .cards .card .desc p a .icon i {
+  display: inline;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .marketPlace {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .marketPlace p a {
+  text-decoration: none;
+  color: #0b8484;
+}
+
+.desktop__menu .menu__container nav ul li .softwareDropdown .marketPlace p a:hover {
+  text-decoration: underline;
 }
 
 .desktop__menu .menu__container nav ul li .resourcesDropdown {
@@ -516,7 +526,7 @@ header .header__items .dropdown::after {
   left: 0;
   right: 0;
   margin: 0 auto;
-  border-top: 1px solid #2d3e50;
+  border: 1px solid #bbcbd9;
   border-radius: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -559,11 +569,10 @@ header .header__items .dropdown::after {
 }
 
 .desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item .heading .icon {
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 17px;
   margin: 0;
   margin-right: 10px;
-  background-color: pink;
 }
 
 .desktop__menu .menu__container nav ul li .resourcesDropdown .dropdown__section .section__item .heading .icon img {
@@ -590,6 +599,10 @@ header .header__items .dropdown::after {
   font-weight: bold;
   margin-left: 30px;
   font-size: 14px;
+}
+
+.desktop__menu .menu__container nav ul > li {
+  height: 100%;
 }
 
 .desktop__menu .menu__container .ctas {

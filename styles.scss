@@ -98,9 +98,6 @@ header {
 
 				&:hover {
 					color: $textHover;
-					.dropdown {
-						display: block;
-					}
 				}
 			}
 
@@ -138,9 +135,6 @@ header {
 				&:hover {
 					text-decoration: underline;
 					color: $textHover;
-					.dropdown {
-						display: block;
-					}
 				}
 				.icon {
 					width: 15px;
@@ -219,7 +213,7 @@ header {
 		@include flex(flex-start, center);
 		position: relative;
 		.site__logo {
-			width: 12%;
+			width: auto;
 			height: 50%;
 			@include flex(flex-start, center);
 			img {
@@ -227,10 +221,14 @@ header {
 				height: 70%;
 			}
 		}
+
 		nav {
 			width: 30%;
 			height: 80%;
 			margin-left: 7%;
+			-webkit-transition: all 0.5s;
+			-o-transition: all 0.5s;
+			transition: all 0.5s;
 			ul {
 				height: 100%;
 				list-style-type: none;
@@ -242,14 +240,6 @@ header {
 
 					&:hover {
 						color: $textHover;
-						.softwareDropdown {
-							display: block;
-						}
-						.resourcesDropdown {
-							display: -webkit-box;
-							display: -ms-flexbox;
-							display: flex;
-						}
 					}
 					.icon {
 						width: 12px;
@@ -267,7 +257,7 @@ header {
 					}
 					.softwareDropdown {
 						width: 100%;
-						height: 80vh;
+						height: 87vh;
 						display: none;
 						position: absolute;
 						overflow-y: scroll;
@@ -275,8 +265,10 @@ header {
 						left: 0;
 						padding: 30px;
 						background-color: $crmBg;
-						border-top: 1px solid $text;
+						border: 1px solid #bbcbd9;
 						color: $text;
+
+						border-radius: 2px;
 						h3,
 						p {
 							text-align: center;
@@ -311,8 +303,10 @@ header {
 									.icon {
 										width: 20px;
 										height: 20px;
-										margin-left: 10px;
-										background-color: green;
+										margin-left: 0px;
+										i {
+											display: inline;
+										}
 									}
 								}
 							}
@@ -366,9 +360,28 @@ header {
 											.icon {
 												width: 20px;
 												height: 20px;
-												background-color: green;
+												margin-left: 0px;
+												i {
+													display: inline;
+												}
 											}
 										}
+									}
+								}
+							}
+						}
+						.marketPlace {
+							width: 100%;
+							height: 100px;
+							background-color: $white;
+							margin-top: 40px;
+							padding-top: 20px;
+							p {
+								a {
+									text-decoration: none;
+									color: $textHover;
+									&:hover {
+										text-decoration: underline;
 									}
 								}
 							}
@@ -383,7 +396,7 @@ header {
 						left: 0;
 						right: 0;
 						margin: 0 auto;
-						border-top: 1px solid $text;
+						border: 1px solid #bbcbd9;
 						border-radius: 2px;
 						@include flex(space-between, flex-start);
 						gap: 20px;
@@ -402,11 +415,11 @@ header {
 									margin-bottom: 10px;
 									@include flex(flex-start, center);
 									.icon {
-										width: 20px;
-										height: 20px;
+										width: 21px;
+										height: 17px;
 										margin: 0;
 										margin-right: 10px;
-										background-color: pink;
+										// background-color: pink;
 										img {
 											width: 100%;
 											height: 100%;
@@ -436,6 +449,9 @@ header {
 						}
 					}
 				}
+			}
+			ul > li {
+				height: 100%;
 			}
 		}
 
