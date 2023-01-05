@@ -1,4 +1,6 @@
+import links from "./Links.js";
 // Image change when menu gets stuck
+
 (function () {
 	let desktop_menu = document.querySelector(".desktop__menu") as HTMLDivElement;
 	window.addEventListener("scroll", () => {
@@ -54,3 +56,86 @@ function checkParent(parent: HTMLDivElement, child: HTMLDivElement, drop: HTMLDi
 		}, 100);
 	}
 }
+
+// Footer nav functionality for mobiles
+class MobileFooter {
+	private parent!: HTMLDivElement;
+	private mobile!: HTMLDivElement;
+	constructor() {
+		this.mobile = document.querySelector("footer .footer__container .mobile") as HTMLDivElement;
+		this.parent = document.querySelector("footer .footer__container .mobile nav ul") as HTMLDivElement;
+		this.displayCategories();
+		this.exitFunctionality();
+	}
+	displayCategories() {
+		this.removeChildren();
+		["Popular Features", "Free Tools", "Company", "Customers", "Partners"].forEach((e) => {
+			this.createCategoryItem(e);
+		});
+	}
+	createCategoryItem(content: string) {
+		let li = document.createElement("li");
+		let p = document.createElement("p");
+		p.textContent = content;
+		let icon = document.createElement("i");
+		icon.classList.add("fa-solid", "fa-angle-right");
+		li.append(p, icon);
+
+		li.addEventListener("click", (e) => {
+			this.displayCategoryLinks(e);
+		});
+		this.parent.append(li);
+	}
+	removeChildren() {
+		let children = Array.from(this.parent.children);
+		children.forEach((e) => {
+			this.parent.removeChild(e);
+		});
+	}
+
+	displayCategoryLinks(e: any) {
+		// Create Title Text
+		let title = document.querySelector("footer .footer__container .mobile .topSection .title") as HTMLDivElement;
+		let content__value = e.currentTarget.querySelector("p").textContent;
+		title.textContent = content__value;
+		this.mobile.classList.add("mobile__active");
+
+		// Create Category Items
+		this.createCategoryItemLinks(content__value);
+	}
+
+	// Creating the links of each category
+	createCategoryItemLinks(category: string) {
+		let match = links.find((e) => e.category.toLowerCase() == category.toLowerCase());
+		if (match?.items) {
+			this.removeChildren();
+			match?.items.forEach((e) => {
+				this.createCategoryItemLink(e.name, e.link);
+			});
+		}
+	}
+	createCategoryItemLink(text: string, link: string) {
+		let li = document.createElement("li");
+		let a = document.createElement("a");
+		a.setAttribute("href", link);
+		let p = document.createElement("p");
+		p.textContent = text;
+		let icon = document.createElement("i");
+		icon.classList.add("fa-solid", "fa-angle-right");
+		a.append(p, icon);
+		li.append(a);
+		this.parent.append(li);
+	}
+
+	exitFunctionality() {
+		let controls = document.querySelectorAll("footer .footer__container .mobile .topSection .controls button") as NodeListOf<HTMLDivElement>;
+		controls.forEach((e) => {
+			e.addEventListener("click", () => {
+				this.mobile.classList.remove("mobile__active");
+				this.displayCategories();
+			});
+		});
+	}
+}
+
+new MobileFooter();

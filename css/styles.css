@@ -1264,6 +1264,9 @@ footer .footer__container .links .others .customers nav a:hover {
 footer .footer__container .links .others .customers .partners {
   margin-top: 90px;
 }
+footer .footer__container .mobile {
+  display: none;
+}
 footer .footer__container .socials {
   width: 40%;
   padding: 0 40px;
@@ -1284,6 +1287,9 @@ footer .footer__container .socials {
 footer .footer__container .socials .icons {
   width: 25px;
   height: 25px;
+}
+footer .footer__container .socials .icons:hover {
+  cursor: pointer;
 }
 footer .footer__container .socials .icons i {
   color: #b6c7d6;
@@ -1319,6 +1325,9 @@ footer .footer__container .more {
   -ms-flex-direction: column;
   flex-direction: column;
   color: white;
+}
+footer .footer__container .more .downloads {
+  display: none;
 }
 footer .footer__container .more p {
   margin-bottom: 10px;
@@ -1512,7 +1521,177 @@ footer .footer__container .more nav a:hover {
     width: 140%;
   }
   footer {
+    padding-top: 20px;
+    padding-inline: 0;
+  }
+  footer .footer__container {
+    height: auto;
+  }
+  footer .footer__container .links {
     display: none;
+  }
+  footer .footer__container .mobile {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  footer .footer__container .mobile .topSection {
+    width: 100%;
+    height: 100px;
+    display: none;
+  }
+  footer .footer__container .mobile .topSection .controls {
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  footer .footer__container .mobile .topSection .controls .back,
+footer .footer__container .mobile .topSection .controls .exit {
+    width: 30px;
+    border: none;
+    height: 30px;
+    background-color: transparent;
+  }
+  footer .footer__container .mobile .topSection .controls .back {
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  footer .footer__container .mobile .topSection .controls .back p {
+    text-transform: uppercase;
+    color: white;
+  }
+  footer .footer__container .mobile .topSection .controls .back .icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  footer .footer__container .mobile .topSection .controls .back .icon i {
+    color: white;
+  }
+  footer .footer__container .mobile .topSection .controls .exit i {
+    color: white;
+    font-size: 17px;
+  }
+  footer .footer__container .mobile .topSection .title {
+    text-align: center;
+    color: white;
+  }
+  footer .footer__container .mobile nav {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+  footer .footer__container .mobile nav ul {
+    list-style-type: none;
+    border-bottom: 2px solid white;
+  }
+  footer .footer__container .mobile nav ul li,
+footer .footer__container .mobile nav ul a {
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 30px 0 20px;
+  }
+  footer .footer__container .mobile nav ul li p,
+footer .footer__container .mobile nav ul a p {
+    color: white;
+  }
+  footer .footer__container .mobile nav ul li i,
+footer .footer__container .mobile nav ul a i {
+    color: white;
+    font-size: 24px;
+  }
+  footer .footer__container .mobile nav ul li:last-child,
+footer .footer__container .mobile nav ul a:last-child {
+    border: none;
+  }
+  footer .footer__container .mobile__active .topSection {
+    display: block;
+  }
+  footer .footer__container .mobile__active nav ul li {
+    border: none;
+    margin-bottom: 20px;
+  }
+  footer .footer__container .mobile__active nav ul li a {
+    padding: 0 20px;
+    text-transform: capitalize;
+    border: none;
+    text-decoration: none;
+    background-color: white;
+  }
+  footer .footer__container .mobile__active nav ul li a p {
+    color: #2d3e50;
+  }
+  footer .footer__container .socials {
+    width: 60%;
+    margin: 0 auto;
+  }
+  footer .footer__container .socials::after, footer .footer__container .socials::before {
+    display: none;
+  }
+  footer .footer__container .more {
+    height: 130px;
+  }
+  footer .footer__container .more .downloads {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    gap: 12px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  footer .footer__container .more .downloads a {
+    width: 150px;
+    height: 50px;
+    display: block;
+  }
+  footer .footer__container .more .downloads a img {
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1608,6 +1787,20 @@ main #partnerships .partnerships__container .section__top .top__sponsors__image 
   main #partnerships .partnerships__container .section__bottom .bottom__image {
     width: 34%;
     height: 70%;
+  }
+  footer {
+    padding-top: 20px;
+  }
+  footer .footer__container {
+    height: auto;
+  }
+  footer .footer__container .links {
+    display: none;
+  }
+  footer .footer__container .socials {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 5%;
   }
 }
 @media screen and (max-width: 600px) {
