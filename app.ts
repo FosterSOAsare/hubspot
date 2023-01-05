@@ -3,14 +3,24 @@
 	let desktop_menu = document.querySelector(".desktop__menu") as HTMLDivElement;
 	window.addEventListener("scroll", () => {
 		if (desktop_menu) {
+			let site__logo = desktop_menu.querySelector(".site__logo") as HTMLDivElement;
 			let logo = desktop_menu.querySelector(".site__logo img") as HTMLImageElement;
 			let src: any = logo.src.split("/");
 			src = src[src.length - 1];
 			let top = getComputedStyle(desktop_menu).top;
-			if (window.scrollY > 70) {
-				logo.src = "./images/logo2.svg";
-			} else if (window.screenY < 70) {
-				logo.src = "./images/logo.svg";
+			if (window.innerWidth > 927) {
+				if (window.scrollY > 70) {
+					logo.src = "./images/logo2.svg";
+					site__logo.classList.add("mini");
+					return;
+				}
+				if (window.scrollY < 70) {
+					logo.src = "./images/logo.svg";
+					if (site__logo.classList.contains("mini")) {
+						site__logo.classList.remove("mini");
+					}
+				}
+				return;
 			}
 		}
 	});
@@ -29,11 +39,7 @@ let currentTarget: any = "";
 	});
 })();
 
-function checkParent(
-	parent: HTMLDivElement,
-	child: HTMLDivElement,
-	drop: HTMLDivElement
-) {
+function checkParent(parent: HTMLDivElement, child: HTMLDivElement, drop: HTMLDivElement): void {
 	if (parent == child || parent.contains(child)) {
 		if (drop.classList.contains("resourcesDropdown")) {
 			drop.style.display = "flex";

@@ -3,15 +3,24 @@
     var desktop_menu = document.querySelector(".desktop__menu");
     window.addEventListener("scroll", function () {
         if (desktop_menu) {
+            var site__logo = desktop_menu.querySelector(".site__logo");
             var logo = desktop_menu.querySelector(".site__logo img");
             var src = logo.src.split("/");
             src = src[src.length - 1];
             var top_1 = getComputedStyle(desktop_menu).top;
-            if (window.scrollY > 70) {
-                logo.src = "./images/logo2.svg";
-            }
-            else if (window.screenY < 70) {
-                logo.src = "./images/logo.svg";
+            if (window.innerWidth > 927) {
+                if (window.scrollY > 70) {
+                    logo.src = "./images/logo2.svg";
+                    site__logo.classList.add("mini");
+                    return;
+                }
+                if (window.scrollY < 70) {
+                    logo.src = "./images/logo.svg";
+                    if (site__logo.classList.contains("mini")) {
+                        site__logo.classList.remove("mini");
+                    }
+                }
+                return;
             }
         }
     });

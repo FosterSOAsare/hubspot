@@ -25,7 +25,7 @@ $icons: #b6c7d6;
 @mixin container {
 	width: 100%;
 	height: 100%;
-	max-width: 1124px;
+	max-width: 1164px;
 	margin: 0 auto;
 }
 @font-face {
@@ -63,10 +63,12 @@ body {
 	overflow-x: hidden;
 }
 
+// Desktop First Approach
 header {
 	width: 100%;
 	height: 55px;
 	background-color: $white;
+	padding: 0 20px;
 	.header__items {
 		@include container;
 		@include flex(space-between, center);
@@ -81,9 +83,9 @@ header {
 			width: 30%;
 			.header__left__elements {
 				@include flex(space-between, center);
-				width: 26%;
+				width: 30%;
 				height: 80%;
-				margin-right: 20px;
+				margin-right: 12px;
 				font-size: 12px;
 				position: relative;
 				text-decoration: none;
@@ -102,7 +104,7 @@ header {
 			}
 
 			.header__left__elements:nth-child(2) {
-				width: 32%;
+				width: 35%;
 				margin-left: 20px;
 			}
 		}
@@ -213,7 +215,7 @@ header {
 		@include flex(flex-start, center);
 		position: relative;
 		.site__logo {
-			width: auto;
+			width: 180px;
 			height: 50%;
 			@include flex(flex-start, center);
 			img {
@@ -221,11 +223,17 @@ header {
 				height: 70%;
 			}
 		}
+		.site__logo2 {
+			display: none;
+		}
+		.mini {
+			animation: reduceWidth 0.5s forwards;
+		}
 
 		nav {
 			width: 30%;
 			height: 80%;
-			margin-left: 7%;
+			margin-left: 5%;
 			-webkit-transition: all 0.5s;
 			-o-transition: all 0.5s;
 			transition: all 0.5s;
@@ -236,10 +244,12 @@ header {
 				color: $text;
 				li {
 					font-size: 18px;
+					font-weight: bold;
 					@include flex(space-between, center);
 
 					&:hover {
 						color: $textHover;
+						text-decoration: underline;
 					}
 					.icon {
 						width: 12px;
@@ -389,7 +399,7 @@ header {
 					}
 					.resourcesDropdown {
 						width: 55%;
-						height: 50vh;
+						height: auto;
 						background-color: $white;
 						position: absolute;
 						top: 90px;
@@ -399,12 +409,13 @@ header {
 						border: 1px solid #bbcbd9;
 						border-radius: 2px;
 						@include flex(space-between, flex-start);
-						gap: 20px;
+						gap: 2px;
 						display: none;
 						.dropdown__section {
-							width: 50%;
+							width: auto;
+							min-width: 50%;
 							height: 100%;
-							padding: 20px;
+							padding: 20px 8px;
 							.section__item {
 								width: 100%;
 								height: auto;
@@ -486,6 +497,10 @@ header {
 				}
 			}
 		}
+
+		.openMenu {
+			display: none;
+		}
 	}
 }
 main {
@@ -495,7 +510,8 @@ main {
 		width: 100%;
 		height: auto;
 		background-color: $heroBg;
-		padding: 130px 0;
+		padding: 130px 20px;
+		overflow-x: hidden;
 		.hero__container {
 			@include container;
 			position: relative;
@@ -520,6 +536,12 @@ main {
 				p {
 					line-height: 30px;
 					margin-bottom: 17px;
+				}
+				p.info {
+					font-size: 14px;
+					line-height: 20px;
+					margin-top: 30px;
+					width: 60%;
 				}
 				.hero__text__ctas {
 					width: 100%;
@@ -554,10 +576,10 @@ main {
 			}
 			.hero__image {
 				position: absolute;
-				right: -295px;
+				right: -25%;
 				top: -30px;
 				margin-left: auto;
-				width: 800px;
+				width: 80%;
 				height: 125%;
 				img {
 					width: 100%;
@@ -571,7 +593,7 @@ main {
 		height: auto;
 		background-color: $crmBg;
 		color: $text;
-		padding: 70px 0;
+		padding: 70px 10px;
 		.crm__container {
 			@include container;
 			h1 {
@@ -584,6 +606,7 @@ main {
 				line-height: 25px;
 				margin: 0 auto;
 				margin-bottom: 20px;
+				padding: 0 10px;
 			}
 			.crm__ctas {
 				width: 100%;
@@ -731,37 +754,21 @@ main {
 		width: 100%;
 		height: auto;
 		background: rgb(40, 185, 159);
-		background: -o-linear-gradient(
-			41deg,
-			rgba(40, 185, 159, 1) 73%,
-			rgba(76, 176, 112, 1) 100%
-		);
-		background: linear-gradient(
-			49deg,
-			rgba(40, 185, 159, 1) 73%,
-			rgba(76, 176, 112, 1) 100%
-		);
+		background: -o-linear-gradient(41deg, rgba(40, 185, 159, 1) 73%, rgba(76, 176, 112, 1) 100%);
+		background: linear-gradient(49deg, rgba(40, 185, 159, 1) 73%, rgba(76, 176, 112, 1) 100%);
 		color: $white;
 		padding: 90px 0 140px 0;
 		.statics__container {
 			@include container;
 			h1 {
-				text-align: center;
 				font-size: 32px;
-				width: auto;
-				display: inline;
 				margin: 0 auto;
 				margin-bottom: 20px;
-				position: relative;
-				&::after {
-					content: attr(data-more);
-					width: 10px;
-					height: 10px;
-					position: absolute;
-					top: -5px;
-					right: -10px;
-					font-size: 14px;
-				}
+			}
+
+			h1.intro {
+				text-align: center;
+				width: 58%;
 			}
 			p.desc {
 				width: 65%;
@@ -785,6 +792,19 @@ main {
 					-webkit-box-direction: normal;
 					-ms-flex-direction: column;
 					flex-direction: column;
+					h1.detail {
+						display: inline;
+						position: relative;
+						&::after {
+							content: attr(data-more);
+							width: 10px;
+							height: 10px;
+							position: absolute;
+							top: -5px;
+							right: -10px;
+							font-size: 14px;
+						}
+					}
 					.image {
 						width: 90px;
 						height: 50px;
@@ -815,7 +835,7 @@ main {
 		width: 100%;
 		height: auto;
 		background-color: $white;
-		padding: 140px 0 70px 0;
+		padding: 140px 20px 70px 20px;
 		.partnerships__container {
 			@include container;
 			.section__top {
@@ -873,7 +893,7 @@ main {
 						margin-bottom: 25px;
 					}
 					p {
-						line-height: 25px;
+						line-height: 35px;
 						margin-bottom: 25px;
 					}
 					.section__cta {
@@ -881,11 +901,10 @@ main {
 						height: 70px;
 						@include flex(flex-start, center);
 						div {
-							width: 35%;
+							width: 32%;
 							height: 100%;
 							border-radius: 5px;
 							margin-right: 20px;
-
 							@include flex(center, center);
 							font-size: 18px;
 						}
@@ -904,6 +923,11 @@ main {
 							}
 						}
 					}
+					.notice {
+						margin-top: 20px;
+						font-weight: 400;
+						font-size: 14px;
+					}
 				}
 				.bottom__image {
 					width: 30%;
@@ -921,7 +945,7 @@ footer {
 	width: 100%;
 	height: auto;
 	background-color: $footerBg;
-	padding: 70px 0;
+	padding: 70px 20px;
 	.footer__container {
 		@include container;
 		height: 100%;
@@ -1063,5 +1087,382 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	header {
+		.header__items {
+			.header__left {
+				.header__left__elements {
+					width: 38%;
+					&:nth-child(2) {
+						width: 38%;
+					}
+				}
+			}
+		}
+	}
+	.desktop__menu {
+		.menu__container {
+			nav {
+				width: 38%;
+			}
+		}
+	}
+	main {
+		#hero {
+			padding-inline: 25px;
+			.hero__container {
+				.hero__text {
+					width: 60%;
+					p {
+						font-size: 14px;
+					}
+					.hero__text__ctas {
+						height: auto;
+						display: block;
+						a {
+							height: 70px;
+							margin-bottom: 20px;
+						}
+					}
+				}
+				.hero__image {
+					height: 120%;
+					width: 70%;
+				}
+			}
+		}
+		#crm {
+			.crm__container {
+				.services {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+		}
+		#statics {
+			.statics__container {
+				h1.intro {
+					width: 75%;
+				}
+				p.desc {
+					width: 82%;
+				}
+				.statics__details {
+					grid-template-columns: 1fr 1fr;
+					.static_detail {
+						&:nth-child(2n) {
+							border-right: none;
+						}
+						&:nth-child(5),
+						&:nth-child(6) {
+							border-bottom: 2px solid white;
+						}
+					}
+				}
+			}
+		}
+		#partnerships {
+			.partnerships__container {
+				.section__bottom {
+					.bottom__text {
+						width: 70%;
+					}
+					.bottom__image {
+						width: 30%;
+						height: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 927px) {
+	header {
+		display: none;
+	}
+	.desktop__menu {
+		height: 70px;
+		.menu__container {
+			@include flex(space-between, center);
+			padding-right: 20px;
+			.site__logo {
+				display: none;
+			}
+			.site__logo2 {
+				display: block;
+				width: 80px;
+				height: 100%;
+				@include flex(center, center);
+				img {
+					width: 60%;
+					height: 60%;
+				}
+			}
+			nav,
+			.ctas {
+				display: none;
+			}
+			.openMenu {
+				border: none;
+				width: 70px;
+				height: 40px;
+				@include flex(center, center);
+				background-color: transparent;
+				div {
+					width: 80%;
+					height: 6px;
+					display: block;
+					background-color: #2e475d;
+					border-radius: 3px;
+					position: relative;
+					&:before,
+					&::after {
+						content: "";
+						width: 80%;
+						height: 100%;
+						position: absolute;
+						border-radius: 3px;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						background-color: #2e475d;
+						z-index: 3;
+					}
+					&:before {
+						top: -10px;
+					}
+					&:after {
+						top: 10px;
+					}
+				}
+			}
+		}
+	}
+	main {
+		#crm {
+			.crm__container {
+				p.intro {
+					width: 100%;
+				}
+			}
+		}
+		#partnerships {
+			.partnerships__container {
+				.section__top {
+					.top__sponsors__image {
+						width: 65%;
+						.image {
+							img {
+								scale: 1.2;
+							}
+						}
+					}
+				}
+				.section__bottom {
+					.bottom__text {
+						p {
+							line-height: 22px;
+						}
+						.section__cta {
+							width: 140%;
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		display: none;
+	}
+}
+@media screen and (max-width: 767px) {
+	main {
+		#hero {
+			.hero__container {
+				flex-direction: row;
+				height: auto;
+				display: block;
+				.hero__image {
+					// display: none;
+					position: relative;
+					right: 0;
+					top: 0;
+					margin-top: 70px;
+					width: 100%;
+					height: 125%;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.hero__text {
+					width: 100%;
+					h1 {
+						font-size: 36px;
+					}
+					.hero__text__ctas {
+						@include flex(flex-start, flex-start);
+						flex-direction: column;
+						height: auto;
+						a {
+							height: 70px;
+							margin-bottom: 20px;
+							&:nth-child(2) {
+								width: 80%;
+							}
+						}
+					}
+				}
+			}
+		}
+		#crm {
+			.crm__container {
+				width: 100%;
+				.services {
+					grid-template-columns: 1fr;
+				}
+			}
+		}
+		#partnerships {
+			padding-block: 50px;
+			.partnerships__container {
+				.section__top {
+					flex-direction: column;
+					height: auto;
+					.top__text,
+					.top__sponsors__image {
+						width: 100%;
+					}
+					.top__text {
+						text-align: center;
+						h1 {
+							margin-bottom: 10px;
+							font-size: 36px;
+						}
+					}
+					.top__sponsors__image {
+						margin-top: 25px;
+					}
+				}
+				.section__bottom {
+					margin-top: 120px;
+					.bottom__text {
+						width: 67%;
+						p {
+							font-weight: normal;
+						}
+						.section__cta {
+							width: 140%;
+							height: auto;
+							display: block;
+							div {
+								margin-bottom: 20px;
+								width: 40%;
+								height: 60px;
+							}
+						}
+					}
+					.bottom__image {
+						width: 34%;
+						height: 70%;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 600px) {
+	main {
+		#crm {
+			.crm__container {
+				width: 100%;
+				.crm__ctas {
+					height: auto;
+					display: block;
+					padding: 0 10px;
+					a {
+						height: 40px;
+						width: 100%;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+		#partnerships {
+			.partnerships__container {
+				.section__bottom {
+					margin-top: 60px;
+					flex-direction: column;
+					height: auto;
+					@include flex(flex-start, flex-start);
+					.bottom__text {
+						width: 100%;
+						order: 2;
+						.section__cta {
+							width: 100%;
+							@include flex(flex-start, center);
+							div {
+								margin-bottom: 0px;
+								width: 45%;
+							}
+						}
+					}
+					.bottom__image {
+						margin: 0 auto;
+						margin-bottom: 20px;
+						width: 50%;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 550px) {
+	main {
+		#hero {
+			padding-top: 85px;
+			.hero__container {
+				.hero__text {
+					.hero__text__ctas {
+						a {
+							width: 100%;
+							&:nth-child(2) {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 515px) {
+	main {
+		#partnerships {
+			.partnerships__container {
+				.section__bottom {
+					.bottom__text {
+						.section__cta {
+							display: block;
+							div {
+								margin-bottom: 20px;
+								width: 350px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@keyframes reduceWidth {
+	from {
+		width: 200px;
+	}
+	to {
+		width: 100px;
 	}
 }
