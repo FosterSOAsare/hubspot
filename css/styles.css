@@ -1714,9 +1714,7 @@ footer .footer__container .more nav a:hover {
     font-size: 28px;
   }
   #phone__menu {
-    display: block;
-  }
-  #phone__menu .phone__menu__container {
+    background-color: red;
     width: 100%;
     height: calc(100vh - 70px);
     position: fixed;
@@ -1726,19 +1724,19 @@ footer .footer__container .more nav a:hover {
     z-index: 3;
     display: none;
   }
-  #phone__menu .phone__menu__container .content {
+  #phone__menu .content {
     width: 100%;
     height: auto;
     margin-top: 30px;
     min-height: 700px;
     padding: 0 20px;
   }
-  #phone__menu .phone__menu__container .content nav {
+  #phone__menu .content nav {
     width: 100%;
     height: auto;
   }
-  #phone__menu .phone__menu__container .content nav li,
-  #phone__menu .phone__menu__container .content nav a {
+  #phone__menu .content nav li,
+  #phone__menu .content nav a {
     width: 100%;
     height: 60px;
     margin-bottom: 20px;
@@ -1760,15 +1758,15 @@ footer .footer__container .more nav a:hover {
     border: 1px solid #2e475d;
     background-color: #f6f9fc;
   }
-  #phone__menu .phone__menu__container .content nav li .icon,
-  #phone__menu .phone__menu__container .content nav a .icon {
+  #phone__menu .content nav li .icon,
+  #phone__menu .content nav a .icon {
     margin-right: 20px;
   }
-  #phone__menu .phone__menu__container .content nav li .icon i,
-  #phone__menu .phone__menu__container .content nav a .icon i {
+  #phone__menu .content nav li .icon i,
+  #phone__menu .content nav a .icon i {
     font-size: 20px;
   }
-  #phone__menu .phone__menu__container .content .actions {
+  #phone__menu .content .actions {
     width: 100%;
     height: 45px;
     margin-top: 30px;
@@ -1783,8 +1781,8 @@ footer .footer__container .more nav a:hover {
     align-items: center;
     gap: 15px;
   }
-  #phone__menu .phone__menu__container .content .actions .demo,
-  #phone__menu .phone__menu__container .content .actions .free {
+  #phone__menu .content .actions .demo,
+  #phone__menu .content .actions .free {
     width: 50%;
     height: 100%;
     background-color: #ff5c35;
@@ -1801,16 +1799,16 @@ footer .footer__container .more nav a:hover {
     color: white;
     font-weight: bold;
   }
-  #phone__menu .phone__menu__container .content .actions .demo:hover,
-  #phone__menu .phone__menu__container .content .actions .free:hover {
+  #phone__menu .content .actions .demo:hover,
+  #phone__menu .content .actions .free:hover {
     background-color: #ffcec2;
   }
-  #phone__menu .phone__menu__container .content .actions .free {
+  #phone__menu .content .actions .free {
     color: #ff5c35;
     background-color: transparent;
     border: 2px solid #ff5c35;
   }
-  #phone__menu .phone__menu__container .content .actions .free:hover {
+  #phone__menu .content .actions .free:hover {
     background-color: #ffebe6;
   }
   main #crm .crm__container p.intro {
@@ -2114,12 +2112,12 @@ footer .footer__container .more nav a:hover {
 }
 
 @media screen and (max-width: 600px) {
-  #phone__menu .phone__menu__container .content .actions {
+  #phone__menu .content .actions {
     height: auto;
     flex-direction: column;
   }
-  #phone__menu .phone__menu__container .content .actions .demo,
-  #phone__menu .phone__menu__container .content .actions .free {
+  #phone__menu .content .actions .demo,
+  #phone__menu .content .actions .free {
     height: 40px;
     width: 100%;
   }

@@ -148,7 +148,7 @@ class MobileMenu {
 	private mediaQuery = window.matchMedia('(max-width: 927px)');
 	private closed: boolean = true;
 	constructor() {
-		this.menu = document.querySelector('#phone__menu .phone__menu__container') as HTMLDivElement;
+		this.menu = document.querySelector('#phone__menu') as HTMLDivElement;
 		this.closeMenu = document.querySelector('.desktop__menu .closeMenu') as HTMLButtonElement;
 		this.openMenu = document.querySelector('.desktop__menu .openMenu') as HTMLButtonElement;
 		this.showMobileMenu();
@@ -165,13 +165,10 @@ class MobileMenu {
 		})
 	}
 
-	createToggle(e: any) {
-		this.closed == false && this.toggleMenu(e.matches ? 'block' : 'none');
-	}
+
 	closeMobileMenu() {
 		this.closeMenu.addEventListener('click', () => {
 			this.toggleMenu('none');
-			this.mediaQuery.removeEventListener('change', (e) => this.createToggle(e));
 			this.closed = true;
 		})
 	}
@@ -179,6 +176,9 @@ class MobileMenu {
 		this.menu.style.display = display;
 		this.openMenu.style.display = display == 'none' ? 'block' : 'none';
 		this.closeMenu.style.display = display;
+	}
+	createToggle(e: any) {
+		!this.closed && this.toggleMenu(e.matches ? 'block' : 'none');
 	}
 }
 
