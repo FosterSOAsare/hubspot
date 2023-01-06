@@ -1280,7 +1280,6 @@ footer {
 			width: 100%;
 			height: auto;
 			margin-top: 30px;
-			// background-color: green;
 			min-height: 700px;
 			padding: 0 20px;
 			nav {
@@ -1304,6 +1303,174 @@ footer {
 						margin-right: 20px;
 						i {
 							font-size: 20px;
+						}
+					}
+				}
+				li {
+					overflow: hidden;
+
+					.sub__category {
+						width: 100%;
+						height: 100vh;
+						background-color: $white;
+						position: fixed;
+						left: 0;
+						top: 0;
+						display: none;
+						overflow-y: scroll;
+						padding-bottom: 250px;
+						.topSection {
+							width: 100%;
+							height: 50px;
+							@include flex(space-between, center);
+							padding: 0 20px;
+
+							button {
+								border: none;
+								background-color: transparent;
+								i {
+									color: $text;
+									font-size: 20px;
+								}
+							}
+							button.back {
+								@include flex(flex-start, center);
+								width: auto;
+								height: 40px;
+								.icon {
+									margin-right: 5px;
+								}
+							}
+						}
+						.content {
+							width: 100%;
+							height: auto;
+							margin: 0;
+							h3 {
+								text-align: center;
+								font-weight: normal;
+							}
+							p {
+								font-size: 14px;
+								font-weight: normal;
+								line-height: 24px;
+							}
+							li {
+								padding: 0 20px;
+								display: block;
+								height: 80px;
+								background-color: transparent;
+								border: 1px solid $text;
+								a {
+									border: none;
+									background-color: transparent;
+									text-decoration: none;
+									padding: 0;
+									padding-right: 10px;
+									font-size: 20px;
+									color: $text;
+									height: 100%;
+									p {
+										font-size: 16px;
+									}
+									i {
+										font-size: 20px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.software {
+					.sub__category {
+						display: none;
+						.content {
+							.info {
+								margin-block: 20px;
+								h3 {
+									font-weight: bold;
+									margin-bottom: 10px;
+								}
+								p {
+									text-align: center;
+								}
+							}
+							li.advanced {
+								padding: 10px;
+								height: auto;
+								max-height: 120px;
+								a {
+									padding: 15px 0;
+									height: auto;
+									@include flex(space-between, flex-start);
+									min-height: 90px;
+
+									padding-right: 20px;
+									.image {
+										width: 8%;
+										height: 30px;
+										img {
+											width: 100%;
+											height: 100%;
+										}
+									}
+									article {
+										width: 70%;
+										margin: 0 10px;
+										height: auto;
+
+										h3,
+										p {
+											text-align: left;
+										}
+										h3 {
+											font-size: 16px;
+											margin-bottom: 9px;
+											font-weight: bold;
+										}
+										p {
+											font-size: 14px;
+										}
+									}
+									.integrations {
+										width: 85%;
+									}
+									i {
+										align-self: center;
+										width: 20px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.resources {
+					.sub__category {
+						.content {
+							article {
+								margin-bottom: 30px;
+								h3 {
+									margin-bottom: 20px;
+								}
+								li {
+									height: 60px;
+									border-radius: 3px;
+								}
+							}
+						}
+					}
+				}
+				.about {
+					.sub__category {
+						h3 {
+							margin-bottom: 30px;
+							font-weight: bold;
+							font-size: 26px;
+						}
+						.content {
+							li {
+								height: 60px;
+							}
 						}
 					}
 				}
