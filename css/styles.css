@@ -1582,9 +1582,8 @@ footer .footer__container .more nav a:hover {
     height: 100vh;
     background-color: white;
     position: fixed;
-    left: 0;
+    right: -100%;
     top: 0;
-    display: none;
     overflow-y: scroll;
     padding-bottom: 250px;
   }
@@ -1662,9 +1661,6 @@ footer .footer__container .more nav a:hover {
   }
   #phone__menu .content nav li .sub__category .content li a i {
     font-size: 20px;
-  }
-  #phone__menu .content nav .software .sub__category {
-    display: none;
   }
   #phone__menu .content nav .software .sub__category .content .info {
     margin-block: 20px;
@@ -2178,5 +2174,21 @@ main #partnerships .partnerships__container .section__top .top__sponsors__image 
   }
   to {
     width: 100px;
+  }
+}
+@keyframes slideSubCategoryIn {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes slideSubCategoryOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
   }
 }

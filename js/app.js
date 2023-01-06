@@ -175,16 +175,20 @@ class MobileMenu {
                 // This allows the firing of the event only when the user clicks on the li on the menu.
                 //  NB: The category contains the sub_category
                 if (!sub__category.contains(target)) {
-                    sub__category.style.display = "block";
+                    sub__category.style.animation = "slideSubCategoryIn 0.5s forwards";
                 }
             });
             let back = sub__category.querySelector(".back");
             back.addEventListener("click", () => {
-                sub__category.style.display = "none";
+                sub__category.style.animation = "slideSubCategoryOut 0.5s forwards";
+                // This prevents the animation from persisiting when the user goes back and then exists the menu
+                setTimeout(() => {
+                    sub__category.style.animation = "none";
+                }, 200);
             });
             let close = sub__category.querySelector(".close");
             close.addEventListener("click", () => {
-                sub__category.style.display = "none";
+                sub__category.style.animation = "none";
                 this.toggleMenu("none");
                 this.closed = true;
             });
