@@ -139,46 +139,75 @@ class MobileFooter {
 }
 new MobileFooter();
 
-
-// Menu for mobiles 
+// Menu for mobiles
 class MobileMenu {
 	private menu!: HTMLDivElement;
 	private closeMenu!: HTMLButtonElement;
 	private openMenu!: HTMLButtonElement;
-	private mediaQuery = window.matchMedia('(max-width: 927px)');
+	private mediaQuery = window.matchMedia("(max-width: 927px)");
 	private closed: boolean = true;
+	private categories!: NodeListOf<HTMLLIElement>;
 	constructor() {
-		this.menu = document.querySelector('#phone__menu') as HTMLDivElement;
-		this.closeMenu = document.querySelector('.desktop__menu .closeMenu') as HTMLButtonElement;
-		this.openMenu = document.querySelector('.desktop__menu .openMenu') as HTMLButtonElement;
+		this.menu = document.querySelector("#phone__menu") as HTMLDivElement;
+		this.closeMenu = document.querySelector(".desktop__menu .closeMenu") as HTMLButtonElement;
+		this.openMenu = document.querySelector(".desktop__menu .openMenu") as HTMLButtonElement;
+		this.categories = this.menu.querySelectorAll(".content > nav > li") as NodeListOf<HTMLLIElement>;
 		this.showMobileMenu();
 		this.closeMobileMenu();
-		this.mediaQuery.addEventListener('change', (e) => this.createToggle(e));
+		this.mediaQuery.addEventListener("change", (e) => this.createToggle(e));
+		this.subCategoriesFunctonality();
 	}
 
 	showMobileMenu() {
-		this.openMenu.addEventListener('click', () => {
+		this.openMenu.addEventListener("click", () => {
 			if (this.mediaQuery.matches) {
-				this.toggleMenu('block');
+				this.toggleMenu("block");
 			}
 			this.closed = false;
-		})
+		});
 	}
 
-
 	closeMobileMenu() {
-		this.closeMenu.addEventListener('click', () => {
-			this.toggleMenu('none');
+		this.closeMenu.addEventListener("click", () => {
+			this.toggleMenu("none");
 			this.closed = true;
-		})
+		});
 	}
 	toggleMenu(display: string) {
 		this.menu.style.display = display;
-		this.openMenu.style.display = display == 'none' ? 'block' : 'none';
+		this.openMenu.style.display = display == "none" ? "block" : "none";
 		this.closeMenu.style.display = display;
 	}
 	createToggle(e: any) {
-		!this.closed && this.toggleMenu(e.matches ? 'block' : 'none');
+		!this.closed && this.toggleMenu(e.matches ? "block" : "none");
+	}
+
+	subCategoriesFunctonality() {
+		// Show Sub Categories
+		this.categories.forEach((category) => {
+			let sub__category = category.querySelector(".sub__category") as HTMLDivElement;
+			category.addEventListener("click", (e) => {
+				let target = e.target as HTMLDivElement;
+				// Check if the target is not in the sub__category
+				// This allows the firing of the event only when the user clicks on the li on the menu.
+				//  NB: The category contains the sub_category
+				if (!sub__category.contains(target)) {
+					sub__category.style.display = "block";
+				}
+			});
+
+			let back = sub__category.querySelector(".back") as HTMLButtonElement;
+			back.addEventListener("click", () => {
+				sub__category.style.display = "none";
+			});
+
+			let close = sub__category.querySelector(".close") as HTMLButtonElement;
+			close.addEventListener("click", () => {
+				sub__category.style.display = "none";
+				this.toggleMenu("none");
+				this.closed = true;
+			});
+		});
 	}
 }
 
