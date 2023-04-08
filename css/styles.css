@@ -663,6 +663,7 @@ header .header__items .dropdown::after {
   -ms-transform: all 0.4s;
   transform: all 0.4s;
   text-decoration: none;
+  color: #2d3e50;
 }
 
 .desktop__menu .menu__container .ctas .demo {
@@ -675,7 +676,6 @@ header .header__items .dropdown::after {
 }
 
 .desktop__menu .menu__container .ctas .started {
-  color: #ff5c35;
   border: 1px solid #ff5c35;
 }
 
@@ -775,6 +775,7 @@ main #hero .hero__container .hero__text .hero__text__ctas a {
   width: 45%;
   height: 100%;
   margin-right: 5%;
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -918,6 +919,12 @@ main #crm .crm__container .services .service__item {
   border-radius: 5px;
   background-color: white;
   padding: 40px 20px;
+  box-shadow: 0 1px 5px rgba(33, 51, 67, 0.12);
+  transition: all 0.5s;
+}
+
+main #crm .crm__container .services .service__item:hover {
+  scale: 1.01;
 }
 
 main #crm .crm__container .services .service__item .top {
@@ -962,6 +969,10 @@ main #crm .crm__container .services .service__item .top h1::after {
   position: relative;
   right: 0;
   top: -10px;
+}
+
+main #crm .crm__container .services .service__item .top ~ p {
+  height: 30%;
 }
 
 main #crm .crm__container .services .service__item p {
@@ -1048,12 +1059,79 @@ main #crm .crm__container .services .service__item .features .started {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: white;
   font-weight: bold;
 }
 
 main #crm .crm__container .services .service__item .features .started:hover {
   background-color: #ffcec2;
+}
+
+main #crm .crm__container .services .service__item .features .started a {
+  text-decoration: none;
+  color: white;
+}
+
+main #crm .crm__container .winning_the_wild {
+  width: 100%;
+  height: 250px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 100px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(33, 51, 67, 0.12);
+}
+
+main #crm .crm__container .winning_the_wild div {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main #crm .crm__container .winning_the_wild div img {
+  height: 100%;
+  width: 100%;
+}
+
+main #crm .crm__container .winning_the_wild div p {
+  text-align: left;
+  margin: 0;
+  margin-block: 20px;
+  padding: 0;
+  display: block;
+  font-weight: 400;
+  width: 80%;
+  margin-bottom: 50px;
+}
+
+main #crm .crm__container .winning_the_wild div a {
+  width: auto;
+  background-color: #ec512e;
+  text-decoration: none;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 3px;
+}
+
+main #crm .crm__container .winning_the_wild div a:hover {
+  background-color: #ffebe6;
+}
+
+main #crm .crm__container .winning_the_wild .image {
+  width: 45%;
+}
+
+main #crm .crm__container .winning_the_wild .text {
+  height: 100%;
+  padding-top: 30px;
 }
 
 main #statics {
@@ -1305,9 +1383,16 @@ main #partnerships .partnerships__container .section__bottom .bottom__text .sect
   font-size: 18px;
 }
 
+main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta div a {
+  text-decoration: none;
+}
+
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .demo {
-  color: white;
   background-color: #ff5c35;
+}
+
+main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .demo a {
+  color: white;
 }
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .demo:hover {
@@ -1316,6 +1401,9 @@ main #partnerships .partnerships__container .section__bottom .bottom__text .sect
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .started {
   border: 1px solid #ff5c35;
+}
+
+main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .started a {
   color: #ff5c35;
 }
 
@@ -1995,6 +2083,14 @@ footer .footer__container .more nav a:hover {
   main #crm .crm__container p.intro {
     width: 100%;
   }
+  main #crm .crm__container .winning_the_wild .image {
+    width: 35%;
+  }
+  main #crm .crm__container .winning_the_wild .text {
+    width: 50%;
+    height: 100%;
+    padding-top: 10px;
+  }
   main #partnerships .partnerships__container .section__top .top__sponsors__image {
     width: 65%;
   }
@@ -2223,14 +2319,25 @@ footer .footer__container .more nav a:hover {
     height: 70px;
     margin-bottom: 20px;
   }
-  main #hero .hero__container .hero__text .hero__text__ctas a:nth-child(2) {
-    width: 80%;
-  }
   main #crm .crm__container {
     width: 100%;
   }
   main #crm .crm__container .services {
     grid-template-columns: 1fr;
+  }
+  main #crm .crm__container .winning_the_wild {
+    gap: 10px;
+  }
+  main #crm .crm__container .winning_the_wild .image {
+    width: 40%;
+  }
+  main #crm .crm__container .winning_the_wild .text {
+    width: 60%;
+    padding-top: 10px;
+  }
+  main #crm .crm__container .winning_the_wild .text p {
+    width: 100%;
+    margin-bottom: 20px;
   }
   main #partnerships {
     padding-block: 50px;
@@ -2363,8 +2470,30 @@ footer .footer__container .more nav a:hover {
   main #hero .hero__container .hero__text .hero__text__ctas a {
     width: 100%;
   }
-  main #hero .hero__container .hero__text .hero__text__ctas a:nth-child(2) {
+  main #crm .crm__container h1 {
+    text-align: left;
+    padding-left: 10px;
+  }
+  main #crm .crm__container .winning_the_wild {
+    height: auto;
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+  main #crm .crm__container .winning_the_wild .image {
     width: 100%;
+    height: 350px;
+  }
+  main #crm .crm__container .winning_the_wild .text {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    width: 90%;
+  }
+  main #crm .crm__container .winning_the_wild .text p {
+    margin-bottom: 40px;
+  }
+  main #statics .statics__container h1 {
+    font-size: 26px;
   }
 }
 

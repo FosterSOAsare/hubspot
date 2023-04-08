@@ -493,6 +493,7 @@ header {
 				-ms-transform: all 0.4s;
 				transform: all 0.4s;
 				text-decoration: none;
+				color: $text;
 			}
 			.demo {
 				background-color: $ctaActive;
@@ -502,8 +503,8 @@ header {
 				}
 			}
 			.started {
-				color: $ctaActive;
 				border: 1px solid $ctaActive;
+
 				&:hover {
 					background-color: $ctaHover2;
 				}
@@ -568,7 +569,7 @@ main {
 						width: 45%;
 						height: 100%;
 						margin-right: 5%;
-
+						text-decoration: none;
 						@include flex(center, center);
 					}
 					.demo {
@@ -669,6 +670,11 @@ main {
 					border-radius: 5px;
 					background-color: $white;
 					padding: 40px 20px;
+					box-shadow: 0 1px 5px rgba(33, 51, 67, 0.12);
+					transition: all 0.5s;
+					&:hover {
+						scale: 1.01;
+					}
 					.top {
 						width: 100%;
 						height: 40px;
@@ -699,6 +705,9 @@ main {
 								top: -10px;
 							}
 						}
+					}
+					.top ~ p {
+						height: 30%;
 					}
 					p {
 						width: 90%;
@@ -753,17 +762,64 @@ main {
 							height: 45px;
 							border-radius: 5px;
 							@include flex(center, center);
-							color: $white;
 							font-weight: bold;
 							&:hover {
 								background-color: $ctaHover;
 							}
+							a {
+								text-decoration: none;
+								color: $white;
+							}
 						}
 					}
 				}
-				// .sales p {
-				// 	font-size: 15px;
-				// }
+			}
+			.winning_the_wild {
+				width: 100%;
+				height: 250px;
+				background-color: $white;
+				@include flex(flex-start, center);
+				gap: 50px;
+				margin-top: 100px;
+				border-radius: 5px;
+				box-shadow: 0 1px 5px rgba(33, 51, 67, 0.12);
+				div {
+					height: 100%;
+					margin: 0;
+					padding: 0;
+					img {
+						height: 100%;
+						width: 100%;
+					}
+					p {
+						text-align: left;
+						margin: 0;
+						margin-block: 20px;
+						padding: 0;
+						display: block;
+						font-weight: 400;
+						width: 80%;
+						margin-bottom: 50px;
+					}
+					a {
+						width: auto;
+						background-color: $heroBg;
+						text-decoration: none;
+						padding: 12px 20px;
+						color: $white;
+						border-radius: 3px;
+						&:hover {
+							background-color: $ctaHover2;
+						}
+					}
+				}
+				.image {
+					width: 45%;
+				}
+				.text {
+					height: 100%;
+					padding-top: 30px;
+				}
 			}
 		}
 	}
@@ -918,6 +974,9 @@ main {
 						height: 70px;
 						@include flex(flex-start, center);
 						div {
+							a {
+								text-decoration: none;
+							}
 							width: 32%;
 							height: 100%;
 							border-radius: 5px;
@@ -926,7 +985,9 @@ main {
 							font-size: 18px;
 						}
 						.demo {
-							color: $white;
+							a {
+								color: $white;
+							}
 							background-color: $ctaActive;
 							&:hover {
 								background-color: $ctaHover;
@@ -934,7 +995,9 @@ main {
 						}
 						.started {
 							border: 1px solid $ctaActive;
-							color: $ctaActive;
+							a {
+								color: $ctaActive;
+							}
 							&:hover {
 								background-color: $ctaHover2;
 							}
@@ -1522,6 +1585,16 @@ footer {
 				p.intro {
 					width: 100%;
 				}
+				.winning_the_wild {
+					.image {
+						width: 35%;
+					}
+					.text {
+						width: 50%;
+						height: 100%;
+						padding-top: 10px;
+					}
+				}
 			}
 		}
 		#partnerships {
@@ -1723,9 +1796,6 @@ footer {
 						a {
 							height: 70px;
 							margin-bottom: 20px;
-							&:nth-child(2) {
-								width: 80%;
-							}
 						}
 					}
 				}
@@ -1737,8 +1807,24 @@ footer {
 				.services {
 					grid-template-columns: 1fr;
 				}
+				.winning_the_wild {
+					gap: 10px;
+					.image {
+						width: 40%;
+					}
+					.text {
+						width: 60%;
+						padding-top: 10px;
+
+						p {
+							width: 100%;
+							margin-bottom: 20px;
+						}
+					}
+				}
 			}
 		}
+
 		#partnerships {
 			padding-block: 50px;
 			.partnerships__container {
@@ -1869,11 +1955,42 @@ footer {
 					.hero__text__ctas {
 						a {
 							width: 100%;
-							&:nth-child(2) {
-								width: 100%;
-							}
 						}
 					}
+				}
+			}
+		}
+		#crm {
+			.crm__container {
+				h1 {
+					text-align: left;
+					padding-left: 10px;
+				}
+				.winning_the_wild {
+					height: auto;
+					flex-direction: column;
+					padding-bottom: 50px;
+
+					.image {
+						width: 100%;
+						height: 350px;
+					}
+					.text {
+						width: 100%;
+						height: 100%;
+						padding-top: 10px;
+						width: 90%;
+						p {
+							margin-bottom: 40px;
+						}
+					}
+				}
+			}
+		}
+		#statics {
+			.statics__container {
+				h1 {
+					font-size: 26px;
 				}
 			}
 		}
