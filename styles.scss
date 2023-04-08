@@ -1374,8 +1374,10 @@ footer {
 					color: rgb(46, 71, 93);
 					border: 1px solid rgb(46, 71, 93);
 					background-color: $menuItemsBg;
+
 					.icon {
 						margin-right: 20px;
+						color: $text;
 						i {
 							font-size: 20px;
 						}
@@ -1705,6 +1707,20 @@ footer {
 							}
 							&:last-child {
 								border: none;
+							}
+						}
+
+						.link {
+							a {
+								&:hover {
+									p,
+									i {
+										color: $textHover;
+									}
+								}
+								i {
+									color: $text;
+								}
 							}
 						}
 					}

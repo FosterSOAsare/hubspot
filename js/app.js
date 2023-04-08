@@ -109,7 +109,9 @@ class MobileFooter {
     createCategoryItemLink(text, link) {
         let li = document.createElement("li");
         let a = document.createElement("a");
+        li.classList.add('link');
         a.setAttribute("href", link);
+        a.setAttribute("target", '_blank');
         let p = document.createElement("p");
         p.textContent = text;
         let icon = document.createElement("i");

@@ -1862,6 +1862,7 @@ footer .footer__container .more nav a:hover {
   #phone__menu .content nav li .icon,
   #phone__menu .content nav a .icon {
     margin-right: 20px;
+    color: #2d3e50;
   }
   #phone__menu .content nav li .icon i,
   #phone__menu .content nav a .icon i {
@@ -2223,6 +2224,13 @@ footer .footer__container .more nav a:hover {
   footer .footer__container .mobile nav ul li:last-child,
   footer .footer__container .mobile nav ul a:last-child {
     border: none;
+  }
+  footer .footer__container .mobile nav ul .link a:hover p,
+  footer .footer__container .mobile nav ul .link a:hover i {
+    color: #0b8484;
+  }
+  footer .footer__container .mobile nav ul .link a i {
+    color: #2d3e50;
   }
   footer .footer__container .mobile__active .topSection {
     display: block;
