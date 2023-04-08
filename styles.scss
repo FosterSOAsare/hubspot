@@ -304,9 +304,11 @@ header {
 								margin-right: 20px;
 								background-color: $white;
 								@include flex(center, center);
-								p {
+								a {
 									margin: 0;
 									color: $textHover;
+									font-size: 14px;
+									text-decoration: none;
 									&:hover {
 										cursor: pointer;
 										text-decoration: underline;
@@ -455,6 +457,14 @@ header {
 										margin-left: 30px;
 										// background-color: white;
 										font-size: 14px;
+										a {
+											color: $text;
+											text-decoration: none;
+											&:hover {
+												text-decoration: underline;
+												color: $textHover;
+											}
+										}
 									}
 								}
 							}
@@ -482,6 +492,7 @@ header {
 				-webkit-transform: all 0.4s;
 				-ms-transform: all 0.4s;
 				transform: all 0.4s;
+				text-decoration: none;
 			}
 			.demo {
 				background-color: $ctaActive;
@@ -557,7 +568,7 @@ main {
 						width: 45%;
 						height: 100%;
 						margin-right: 5%;
-						text-decoration: none;
+
 						@include flex(center, center);
 					}
 					.demo {
@@ -565,6 +576,7 @@ main {
 						background-color: white;
 						-webkit-transition: all 0.4s;
 						-o-transition: all 0.4s;
+						text-decoration: none !important;
 						transition: all 0.4s;
 						&:hover {
 							background-color: $ctaHover;
