@@ -1,6 +1,6 @@
 $white: white;
 $text: #2d3e50;
-$text2: #99a5b0;
+$text2: #2e475d;
 $textHover: #0b8484;
 $textHover2: #a9ecec;
 $ctaActive: #c22e0e;
@@ -33,24 +33,29 @@ $menuItemsBg: #f6f9fc;
 	font-family: LexendDeca;
 	src: url("/fonts/LexendDeca-Medium.woff2");
 	font-weight: 500;
+	font-display: swap;
 }
 @font-face {
 	font-family: LexendDecaRegular;
 	src: url("/fonts/LexendDeca-Regular.woff2");
 	font-weight: 400;
+	font-display: swap;
 }
 @font-face {
 	font-family: Hsg;
 	src: url("/fonts/hsg-icons.woff2");
+	font-display: swap;
 }
 @font-face {
 	font-family: Queens;
 	src: url("/fonts/Queens-Medium.woff2");
+	font-display: swap;
 }
 @font-face {
 	font-family: LexendDecaLight;
 	src: url("/fonts/LexendDeca-Light.woff2");
 	font-weight: light;
+	font-display: swap;
 }
 
 * {
@@ -1601,6 +1606,15 @@ footer {
 		}
 	}
 	main {
+		#hero {
+			.hero__container {
+				.hero__text {
+					p.info {
+						width: 100%;
+					}
+				}
+			}
+		}
 		#crm {
 			.crm__container {
 				p.intro {

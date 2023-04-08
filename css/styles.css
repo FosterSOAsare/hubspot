@@ -2,28 +2,33 @@
   font-family: LexendDeca;
   src: url("/fonts/LexendDeca-Medium.woff2");
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
   font-family: LexendDecaRegular;
   src: url("/fonts/LexendDeca-Regular.woff2");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: Hsg;
   src: url("/fonts/hsg-icons.woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Queens;
   src: url("/fonts/Queens-Medium.woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: LexendDecaLight;
   src: url("/fonts/LexendDeca-Light.woff2");
   font-weight: light;
+  font-display: swap;
 }
 
 * {
@@ -979,8 +984,8 @@ main #crm .crm__container .services .service__item p {
   width: 90%;
   font-family: LexendDecaLight;
   font-size: 14px;
-  color: #99a5b0;
-  border-bottom: 1px solid #99a5b0;
+  color: #2e475d;
+  border-bottom: 1px solid #2e475d;
   padding-bottom: 45px;
   margin-right: auto;
   padding-inline: 8px;
@@ -2109,6 +2114,9 @@ footer .footer__container .author img {
   }
   #phone__menu .content .actions .free:hover {
     background-color: #ffebe6;
+  }
+  main #hero .hero__container .hero__text p.info {
+    width: 100%;
   }
   main #crm .crm__container p.intro {
     width: 100%;
