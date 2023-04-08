@@ -2039,7 +2039,7 @@ footer .footer__container .more nav a:hover {
   }
   #phone__menu .content .actions {
     width: 100%;
-    height: 45px;
+    height: 70px;
     margin-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2415,7 +2415,7 @@ footer .footer__container .more nav a:hover {
   }
   #phone__menu .content .actions .demo,
   #phone__menu .content .actions .free {
-    height: 40px;
+    height: 60px;
     width: 100%;
   }
   main #crm .crm__container {
