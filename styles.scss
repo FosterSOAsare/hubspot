@@ -1176,6 +1176,21 @@ footer {
 				}
 			}
 		}
+		.author {
+			width: 100%;
+			height: auto;
+			@include flex(center, center);
+			gap: 10px;
+			p {
+				color: white;
+				font-size: 12px;
+			}
+			img {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+			}
+		}
 	}
 }
 

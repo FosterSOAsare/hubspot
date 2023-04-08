@@ -1660,6 +1660,32 @@ footer .footer__container .more nav a:hover {
   color: #a9ecec;
 }
 
+footer .footer__container .author {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .footer__container .author p {
+  color: white;
+  font-size: 12px;
+}
+
+footer .footer__container .author img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 1024px) {
   header .header__items .header__left .header__left__elements {
     width: 38%;
