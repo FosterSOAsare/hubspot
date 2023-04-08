@@ -3,11 +3,11 @@ $text: #2d3e50;
 $text2: #99a5b0;
 $textHover: #0b8484;
 $textHover2: #a9ecec;
-$ctaActive: #ff5c35;
+$ctaActive: #c22e0e;
 $ctaHover: #ffcec2;
 $ctaHover2: #ffebe6;
 $ctaHover3: #d44325;
-$heroBg: #ee3c14;
+$heroBg: #c22e0e;
 $crmBg: #f6f9fc;
 $footerBg: #213343;
 $icons: #b6c7d6;
@@ -1182,6 +1182,7 @@ footer {
 			height: auto;
 			@include flex(center, center);
 			gap: 10px;
+			margin-top: 20px;
 			p {
 				color: white;
 				font-size: 12px;

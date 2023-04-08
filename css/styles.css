@@ -667,7 +667,7 @@ header .header__items .dropdown::after {
 }
 
 .desktop__menu .menu__container .ctas .demo {
-  background-color: #ff5c35;
+  background-color: #c22e0e;
   color: white;
 }
 
@@ -676,7 +676,7 @@ header .header__items .dropdown::after {
 }
 
 .desktop__menu .menu__container .ctas .started {
-  border: 1px solid #ff5c35;
+  border: 1px solid #c22e0e;
 }
 
 .desktop__menu .menu__container .ctas .started:hover {
@@ -700,7 +700,7 @@ main {
 main #hero {
   width: 100%;
   height: auto;
-  background-color: #ee3c14;
+  background-color: #c22e0e;
   padding: 130px 20px;
   overflow-x: hidden;
 }
@@ -888,7 +888,7 @@ main #crm .crm__container .crm__ctas a {
 main #crm .crm__container .crm__ctas a.free__crm {
   margin-right: 20px;
   color: white;
-  background-color: #ff5c35;
+  background-color: #c22e0e;
 }
 
 main #crm .crm__container .crm__ctas a.free__crm:hover {
@@ -896,8 +896,8 @@ main #crm .crm__container .crm__ctas a.free__crm:hover {
 }
 
 main #crm .crm__container .crm__ctas a.premium__crm {
-  color: #ff5c35;
-  border: 1px solid #ff5c35;
+  color: #c22e0e;
+  border: 1px solid #c22e0e;
 }
 
 main #crm .crm__container .crm__ctas a.premium__crm:hover {
@@ -1016,7 +1016,7 @@ main #crm .crm__container .services .service__item .features .feature {
 main #crm .crm__container .services .service__item .features .feature .icon {
   width: 15px;
   height: 15px;
-  background-color: #ff5c35;
+  background-color: #c22e0e;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1048,7 +1048,7 @@ main #crm .crm__container .services .service__item .features .feature P {
 main #crm .crm__container .services .service__item .features .started {
   width: 100%;
   margin-top: 23px;
-  background-color: #ff5c35;
+  background-color: #c22e0e;
   height: 45px;
   border-radius: 5px;
   display: -webkit-box;
@@ -1115,7 +1115,7 @@ main #crm .crm__container .winning_the_wild div p {
 
 main #crm .crm__container .winning_the_wild div a {
   width: auto;
-  background-color: #ee3c14;
+  background-color: #c22e0e;
   text-decoration: none;
   padding: 12px 20px;
   color: white;
@@ -1389,7 +1389,7 @@ main #partnerships .partnerships__container .section__bottom .bottom__text .sect
 }
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .demo {
-  background-color: #ff5c35;
+  background-color: #c22e0e;
 }
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .demo a {
@@ -1401,11 +1401,11 @@ main #partnerships .partnerships__container .section__bottom .bottom__text .sect
 }
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .started {
-  border: 1px solid #ff5c35;
+  border: 1px solid #c22e0e;
 }
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .started a {
-  color: #ff5c35;
+  color: #c22e0e;
 }
 
 main #partnerships .partnerships__container .section__bottom .bottom__text .section__cta .started:hover {
@@ -1674,6 +1674,7 @@ footer .footer__container .author {
   -ms-flex-align: center;
   align-items: center;
   gap: 10px;
+  margin-top: 20px;
 }
 
 footer .footer__container .author p {
@@ -2083,7 +2084,7 @@ footer .footer__container .author img {
   #phone__menu .content .actions .free {
     width: 50%;
     height: 100%;
-    background-color: #ff5c35;
+    background-color: #c22e0e;
     border-radius: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2102,9 +2103,9 @@ footer .footer__container .author img {
     background-color: #ffcec2;
   }
   #phone__menu .content .actions .free {
-    color: #ff5c35;
+    color: #c22e0e;
     background-color: transparent;
-    border: 2px solid #ff5c35;
+    border: 2px solid #c22e0e;
   }
   #phone__menu .content .actions .free:hover {
     background-color: #ffebe6;
