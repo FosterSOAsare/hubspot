@@ -700,7 +700,7 @@ main {
 main #hero {
   width: 100%;
   height: auto;
-  background-color: #ec512e;
+  background-color: #ee3c14;
   padding: 130px 20px;
   overflow-x: hidden;
 }
@@ -992,9 +992,10 @@ main #crm .crm__container .services .service__item .features {
   margin-inline: auto;
 }
 
-main #crm .crm__container .services .service__item .features h3 {
+main #crm .crm__container .services .service__item .features h4 {
   font-weight: 400;
   margin-bottom: 15px;
+  font-size: 24px;
 }
 
 main #crm .crm__container .services .service__item .features .feature {
@@ -1114,7 +1115,7 @@ main #crm .crm__container .winning_the_wild div p {
 
 main #crm .crm__container .winning_the_wild div a {
   width: auto;
-  background-color: #ec512e;
+  background-color: #ee3c14;
   text-decoration: none;
   padding: 12px 20px;
   color: white;
@@ -1466,7 +1467,7 @@ footer .footer__container .links .features {
   color: white;
 }
 
-footer .footer__container .links .features h3 {
+footer .footer__container .links .features h4 {
   font-size: 14px;
 }
 
