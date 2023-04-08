@@ -1824,6 +1824,7 @@ footer .footer__container .more nav a:hover {
     background-color: white;
     z-index: 3;
     display: none;
+    overflow-y: auto;
   }
   #phone__menu .content {
     width: 100%;

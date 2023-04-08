@@ -1351,6 +1351,7 @@ footer {
 		background-color: $white;
 		z-index: 3;
 		display: none;
+		overflow-y: auto;
 		.content {
 			width: 100%;
 			height: auto;
