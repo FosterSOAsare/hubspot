@@ -782,7 +782,7 @@ main {
 			}
 			.winning_the_wild {
 				width: 100%;
-				height: 250px;
+				height: auto;
 				background-color: $white;
 				@include flex(flex-start, center);
 				gap: 50px;
@@ -790,7 +790,7 @@ main {
 				border-radius: 5px;
 				box-shadow: 0 1px 5px rgba(33, 51, 67, 0.12);
 				div {
-					height: 100%;
+					height: auto;
 					margin: 0;
 					padding: 0;
 					img {
@@ -805,7 +805,6 @@ main {
 						display: block;
 						font-weight: 400;
 						width: 80%;
-						margin-bottom: 50px;
 					}
 					a {
 						width: auto;
@@ -814,6 +813,8 @@ main {
 						padding: 12px 20px;
 						color: $white;
 						border-radius: 3px;
+						display: inline-block;
+
 						&:hover {
 							background-color: $ctaHover2;
 						}
@@ -823,8 +824,7 @@ main {
 					width: 45%;
 				}
 				.text {
-					height: 100%;
-					padding-top: 30px;
+					padding-block: 30px;
 				}
 			}
 		}
@@ -1622,10 +1622,10 @@ footer {
 				.winning_the_wild {
 					.image {
 						width: 35%;
+						height: 250px;
 					}
 					.text {
-						width: 50%;
-						height: 100%;
+						width: 60%;
 						padding-top: 10px;
 					}
 				}
@@ -1856,17 +1856,19 @@ footer {
 					grid-template-columns: 1fr;
 				}
 				.winning_the_wild {
+					height: auto;
 					gap: 10px;
 					.image {
 						width: 40%;
 					}
 					.text {
-						width: 60%;
-						padding-top: 10px;
+						width: 57%;
+						padding-top: 20px;
+						margin-left: auto;
 
 						p {
 							width: 100%;
-							margin-bottom: 20px;
+							margin-bottom: 30px;
 						}
 					}
 				}
@@ -1935,65 +1937,46 @@ footer {
 		}
 	}
 }
+
 @media screen and (max-width: 600px) {
-	#phone__menu {
-		.content {
-			.actions {
-				height: auto;
-				flex-direction: column;
-				.demo,
-				.free {
-					height: 60px;
-					width: 100%;
-				}
-			}
-		}
-	}
 	main {
 		#crm {
 			.crm__container {
-				width: 100%;
-				.crm__ctas {
-					height: auto;
-					display: block;
-					padding: 0 10px;
-					a {
-						height: 40px;
+				h1 {
+					text-align: left;
+					padding-left: 10px;
+				}
+				.winning_the_wild {
+					margin-inline: auto;
+					flex-direction: column;
+					overflow: hidden;
+					.image {
 						width: 100%;
-						margin-bottom: 20px;
+						height: 250px;
+					}
+					.text {
+						width: 100%;
+						height: auto;
+						padding-top: 10px;
+						width: 90%;
+						margin: 0;
+						p {
+							margin-bottom: 40px;
+						}
 					}
 				}
 			}
 		}
-		#partnerships {
-			.partnerships__container {
-				.section__bottom {
-					margin-top: 60px;
-					flex-direction: column;
-					height: auto;
-					@include flex(flex-start, flex-start);
-					.bottom__text {
-						width: 100%;
-						order: 2;
-						.section__cta {
-							width: 100%;
-							@include flex(flex-start, center);
-							div {
-								margin-bottom: 0px;
-								width: 45%;
-							}
-						}
-					}
-					.bottom__image {
-						margin: 0 auto;
-						margin-bottom: 20px;
-						width: 50%;
-					}
+		#statics {
+			.statics__container {
+				h1 {
+					font-size: 26px;
 				}
 			}
 		}
 	}
 }
+
 @media screen and (max-width: 550px) {
 	main {
 		#hero {
@@ -2010,28 +1993,9 @@ footer {
 		}
 		#crm {
 			.crm__container {
-				h1 {
-					text-align: left;
-					padding-left: 10px;
-				}
+				width: 100%;
 				.winning_the_wild {
-					height: auto;
-					flex-direction: column;
-					padding-bottom: 50px;
-
-					.image {
-						width: 100%;
-						height: 350px;
-					}
-					.text {
-						width: 100%;
-						height: 100%;
-						padding-top: 10px;
-						width: 90%;
-						p {
-							margin-bottom: 40px;
-						}
-					}
+					width: 100%;
 				}
 			}
 		}
