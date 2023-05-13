@@ -179,6 +179,10 @@ header {
 				li {
 					margin-bottom: 13px;
 					cursor: pointer;
+					a {
+						color: $text;
+						text-decoration: none;
+					}
 					&:hover {
 						text-decoration: underline;
 						color: $textHover;
@@ -922,15 +926,15 @@ main {
 				height: 200px;
 				@include flex(space-between, center);
 				.top__text {
-					width: 30%;
+					width: 40%;
 					height: auto;
 					color: $text;
 					h1 {
-						font-size: 32px;
+						font-size: 42px;
 						margin-bottom: 25px;
 					}
 					p {
-						font-size: 17px;
+						font-size: 24px;
 						line-height: 30px;
 					}
 				}
@@ -1363,7 +1367,6 @@ footer {
 		}
 	}
 	#phone__menu {
-		background-color: red;
 		width: 100%;
 		height: calc(100vh - 70px);
 		position: fixed;
@@ -1396,6 +1399,7 @@ footer {
 					color: rgb(46, 71, 93);
 					border: 1px solid rgb(46, 71, 93);
 					background-color: $menuItemsBg;
+					text-decoration: none;
 
 					.icon {
 						margin-right: 20px;
@@ -1414,15 +1418,16 @@ footer {
 						position: fixed;
 						right: -100%;
 						top: 0;
-						// display: none;
 						overflow-y: scroll;
 						padding-bottom: 250px;
+						z-index: 4 !important;
 						.topSection {
 							width: 100%;
 							height: 50px;
 							@include flex(space-between, center);
 							padding: 0 20px;
-
+							position: relative;
+							z-index: 3;
 							button {
 								border: none;
 								background-color: transparent;
@@ -1454,20 +1459,22 @@ footer {
 								line-height: 24px;
 							}
 							li {
-								padding: 0 20px;
 								display: block;
-								height: 80px;
+								min-height: 20px;
+								height: auto;
 								background-color: transparent;
 								border: 1px solid $text;
+								padding: 0;
 								a {
 									border: none;
 									background-color: transparent;
 									text-decoration: none;
-									padding: 0;
-									padding-right: 10px;
+
+									padding: 10px 20px;
 									font-size: 20px;
 									color: $text;
 									height: 100%;
+									margin: 0;
 									p {
 										font-size: 16px;
 									}
@@ -1493,15 +1500,16 @@ footer {
 								}
 							}
 							li.advanced {
-								padding: 10px;
+								padding: 5px;
 								height: auto;
-								max-height: 120px;
+								max-height: 150px;
+
 								a {
-									padding: 15px 0;
+									padding: 10px 0;
 									height: auto;
 									@include flex(space-between, flex-start);
-									min-height: 90px;
-
+									height: 100% !important;
+									margin: 0;
 									padding-right: 20px;
 									.image {
 										width: 8%;
@@ -1512,10 +1520,9 @@ footer {
 										}
 									}
 									article {
-										width: 70%;
+										width: 90%;
 										margin: 0 10px;
 										height: auto;
-
 										h3,
 										p {
 											text-align: left;
@@ -1634,12 +1641,31 @@ footer {
 		#partnerships {
 			.partnerships__container {
 				.section__top {
+					.top__text {
+						width: 40%;
+						h1 {
+							font-size: 26px;
+							margin-bottom: 20px;
+						}
+						p {
+							font-size: 16px;
+						}
+					}
+
 					.top__sponsors__image {
-						width: 65%;
+						width: 60%;
+						height: 150px;
 						.image {
+							height: 100%;
+							width: 100%;
 							img {
 								scale: 1.2;
 							}
+						}
+						.momentive {
+							height: 15%;
+							width: 70%;
+							margin-top: -20px;
 						}
 					}
 				}
@@ -1716,7 +1742,6 @@ footer {
 					}
 				}
 				nav {
-					// background-color: green;
 					width: 100%;
 					height: auto;
 					min-height: 300px;
@@ -1898,6 +1923,7 @@ footer {
 				}
 				.section__bottom {
 					margin-top: 120px;
+
 					.bottom__text {
 						width: 67%;
 						p {
@@ -1975,6 +2001,47 @@ footer {
 				}
 			}
 		}
+		#partnerships {
+			.partnerships__container {
+				.section__top {
+					.top__sponsors__image {
+						// width: 200%;
+
+						.image {
+							overflow: hidden;
+							.ww {
+								scale: 1.2;
+								width: 150%;
+							}
+						}
+					}
+				}
+				// .section__bottom {
+				// 	margin-top: 120px;
+
+				// 	.bottom__text {
+				// 		width: 67%;
+				// 		p {
+				// 			font-weight: normal;
+				// 		}
+				// 		.section__cta {
+				// 			width: 140%;
+				// 			height: auto;
+				// 			display: block;
+				// 			div {
+				// 				margin-bottom: 20px;
+				// 				width: 40%;
+				// 				height: 60px;
+				// 			}
+				// 		}
+				// 	}
+				// 	.bottom__image {
+				// 		width: 34%;
+				// 		height: 70%;
+				// 	}
+				// }
+			}
+		}
 	}
 }
 
@@ -1995,6 +2062,16 @@ footer {
 		#crm {
 			.crm__container {
 				width: 100%;
+				.services {
+					.service__item {
+						padding: 30px 15px;
+						height: auto;
+						.top ~ p {
+							min-height: 30%;
+							height: auto;
+						}
+					}
+				}
 				.winning_the_wild {
 					width: 100%;
 				}
@@ -2023,14 +2100,24 @@ footer {
 		#partnerships {
 			.partnerships__container {
 				.section__bottom {
+					height: auto;
+					flex-direction: column;
+					width: 100%;
 					.bottom__text {
+						width: 100%;
+						order: 2;
 						.section__cta {
-							display: block;
+							width: 100%;
+							@include flex(center, flex-start);
+							flex-direction: column;
 							div {
 								margin-bottom: 20px;
-								width: 350px;
+								width: 80%;
 							}
 						}
+					}
+					.bottom__image {
+						margin-bottom: 20px;
 					}
 				}
 			}
@@ -2062,4 +2149,7 @@ footer {
 	to {
 		right: -100%;
 	}
+}
+#zohocomponents__svg {
+	display: none;
 }
