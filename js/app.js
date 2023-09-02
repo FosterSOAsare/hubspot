@@ -72,6 +72,7 @@ class MobileFooter {
     createCategoryItem(content) {
         let li = document.createElement("li");
         let p = document.createElement("p");
+        li.className = 'footer__category';
         p.textContent = content;
         let icon = document.createElement("i");
         icon.classList.add("fa-solid", "fa-angle-right");

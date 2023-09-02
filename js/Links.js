@@ -162,8 +162,8 @@ let links = [
                 link: "https://help.hubspot.com/?hubs_content=www.hubspot.com/&hubs_content-cta=%0A%20%20%20%20%20%20%20%20Customer%20Support",
             },
             {
-                name: "https://www.hubspot.com/hubspot-user-groups?hubs_content=www.hubspot.com/&hubs_content-cta=%0A%20%20%20%20%20%20%20%20Join%20a%20Local%20User%20Group",
-                link: "Join a Local User Group",
+                link: "https://www.hubspot.com/hubspot-user-groups?hubs_content=www.hubspot.com/&hubs_content-cta=%0A%20%20%20%20%20%20%20%20Join%20a%20Local%20User%20Group",
+                name: "Join a Local User Group",
             },
         ],
     },

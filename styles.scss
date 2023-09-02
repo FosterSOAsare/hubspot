@@ -117,7 +117,7 @@ header {
 		.header__right {
 			@include flex(space-between, center);
 			font-size: 13px;
-			width: 30%;
+			width: 28%;
 
 			color: $text;
 			.icon {
@@ -513,9 +513,13 @@ header {
 			}
 			.started {
 				border: 1px solid $ctaActive;
-
 				&:hover {
 					background-color: $ctaHover2;
+				}
+				a {
+					display: block;
+					width: 100%;
+					color: green !important;
 				}
 			}
 		}
@@ -623,6 +627,7 @@ main {
 		padding: 70px 10px;
 		.crm__container {
 			@include container;
+
 			h1 {
 				margin-bottom: 30px;
 				font-size: 32px;
@@ -640,6 +645,7 @@ main {
 				height: 40px;
 				background-color: center;
 				@include flex(center, center);
+
 				a {
 					width: auto;
 					height: 100%;
@@ -669,6 +675,7 @@ main {
 			.services {
 				width: 100%;
 				margin-top: 50px;
+
 				height: auto;
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
@@ -681,6 +688,7 @@ main {
 					padding: 40px 20px;
 					box-shadow: 0 1px 5px rgba(33, 51, 67, 0.12);
 					transition: all 0.5s;
+
 					&:hover {
 						scale: 1.01;
 					}
@@ -732,6 +740,7 @@ main {
 						width: 92%;
 						height: 200px;
 						margin-inline: auto;
+
 						h4 {
 							font-weight: 400;
 							margin-bottom: 15px;
@@ -777,8 +786,10 @@ main {
 								background-color: $ctaHover;
 							}
 							a {
+								@include flex(center, center);
 								text-decoration: none;
 								color: $white;
+								width: 100%;
 							}
 						}
 					}
@@ -1321,12 +1332,15 @@ footer {
 			}
 			.openMenu {
 				border: none;
-				width: 70px;
+				width: 50px;
 				height: 40px;
 				@include flex(center, center);
 				background-color: transparent;
+				&:hover {
+					cursor: pointer;
+				}
 				div {
-					width: 80%;
+					width: 100%;
 					height: 6px;
 					display: block;
 					background-color: #2e475d;
@@ -1359,6 +1373,9 @@ footer {
 				background-color: transparent;
 				border: none;
 				display: none;
+				&:hover {
+					cursor: pointer;
+				}
 				i {
 					color: #2e475d;
 					font-size: 28px;
@@ -1418,22 +1435,29 @@ footer {
 						position: fixed;
 						right: -100%;
 						top: 0;
-						overflow-y: scroll;
+						overflow-y: auto;
 						padding-bottom: 250px;
+						min-height: 100vh;
 						z-index: 4 !important;
 						.topSection {
 							width: 100%;
 							height: 50px;
 							@include flex(space-between, center);
 							padding: 0 20px;
-							position: relative;
-							z-index: 3;
+							z-index: 5;
+							position: static !important;
+							top: 0;
+							left: 0;
+							background-color: $white;
 							button {
 								border: none;
 								background-color: transparent;
 								i {
 									color: $text;
 									font-size: 20px;
+								}
+								&:hover {
+									cursor: pointer;
 								}
 							}
 							button.back {
@@ -1481,10 +1505,18 @@ footer {
 									i {
 										font-size: 20px;
 									}
+									&:hover {
+										color: $textHover;
+										opacity: 0.6;
+									}
 								}
 							}
 						}
 					}
+				}
+				a:hover {
+					opacity: 0.4;
+					color: $textHover;
 				}
 				.software {
 					.sub__category {
@@ -1960,6 +1992,10 @@ footer {
 				max-width: 500px;
 				padding: 0 5%;
 			}
+			.footer__category:hover {
+				cursor: pointer;
+				opacity: 0.2;
+			}
 		}
 	}
 }
@@ -2103,21 +2139,26 @@ footer {
 					height: auto;
 					flex-direction: column;
 					width: 100%;
+					margin-top: 30px;
 					.bottom__text {
 						width: 100%;
 						order: 2;
+						h1 {
+							text-align: center;
+						}
 						.section__cta {
 							width: 100%;
 							@include flex(center, flex-start);
 							flex-direction: column;
 							div {
 								margin-bottom: 20px;
-								width: 80%;
+								width: 100%;
 							}
 						}
 					}
 					.bottom__image {
 						margin-bottom: 20px;
+						width: 60%;
 					}
 				}
 			}
